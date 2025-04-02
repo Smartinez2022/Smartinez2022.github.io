@@ -1689,3 +1689,59 @@ section {
     }
 }
 
+/* Responsive Design for Navigation Bar */
+@media (max-width: 768px) {
+    .Nav {
+        height: 60px; /* Reduce the height of the nav bar */
+        padding: 5px 15px; /* Reduce padding inside the nav bar */
+    }
+
+    .Nav .logo img.new-logo {
+        height: 50px; /* Reduce the size of the new logo */
+        width: 50px; /* Maintain proportional width */
+        margin-top: 0; /* Remove extra margin */
+    }
+
+    .Nav .logo img.apple {
+        height: 24px; /* Reduce the size of the original logo */
+        width: 80px; /* Maintain proportional width */
+    }
+
+    .Nav .menu-button,
+    .Nav .superintendent a {
+        font-size: 14px; /* Reduce font size for buttons */
+        padding: 5px 10px; /* Reduce padding for buttons */
+    }
+
+    .Nav .right-buttons {
+        gap: 5px; /* Reduce spacing between buttons */
+    }
+}
+
+/* Extra Small Screens (max-width: 480px) */
+@media (max-width: 480px) {
+    .Nav {
+        height: 50px; /* Further reduce the height of the nav bar */
+        padding: 5px 10px; /* Reduce padding even more */
+    }
+
+    .Nav .logo img.new-logo {
+        height: 40px; /* Further reduce the size of the new logo */
+        width: 40px; /* Maintain proportional width */
+    }
+
+    .Nav .logo img.apple {
+        height: 20px; /* Further reduce the size of the original logo */
+        width: 70px; /* Maintain proportional width */
+    }
+
+    .Nav .menu-button,
+    .Nav .superintendent a {
+        font-size: 12px; /* Further reduce font size for buttons */
+        padding: 3px 8px; /* Further reduce padding for buttons */
+    }
+
+    .Nav .right-buttons {
+        gap: 3px; /* Further reduce spacing between buttons */
+    }
+}

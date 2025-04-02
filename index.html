@@ -183,7 +183,28 @@
                  menuContainer.classList.toggle("active");
              });
          });
+
+      function toggleDropdown() {
+    const dropdown = document.querySelector('.dropdown');
+    dropdown.classList.toggle('active');
+}
+
+function closeDropdown() {
+    const dropdown = document.querySelector('.dropdown');
+    dropdown.classList.remove('active');
+}
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function (event) {
+    const dropdown = document.querySelector('.dropdown');
+    const menuButton = document.querySelector('.menu-button');
+    if (!menuButton.contains(event.target) && !dropdown.contains(event.target)) {
+        dropdown.classList.remove('active');
+    }
+});
      </script>
+
+
  </body>
  </html>
  

@@ -1582,3 +1582,107 @@ section {
     }
 }
 
+@media (max-width: 480px) {
+    /* Navigation Bar */
+    .Nav {
+        height: 40px; /* Reduce the height of the nav bar */
+        padding: 5px 10px; /* Minimize padding */
+        justify-content: space-between; /* Align items to the edges */
+    }
+
+    .Nav .logo img {
+        height: 25px; /* Smaller logo size */
+        width: auto;
+    }
+
+    .Nav .right-buttons {
+        flex-direction: row; /* Keep buttons in a row */
+        gap: 5px; /* Reduce spacing between buttons */
+    }
+
+    .Nav .menu-button,
+    .Nav .superintendent a {
+        font-size: 12px; /* Smaller font size for buttons */
+        padding: 3px 5px; /* Reduce padding for buttons */
+    }
+
+    /* Move Menu and Superintendent Buttons to the Top-Right */
+    .Nav .menu-container {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+    }
+
+    .Nav .superintendent {
+        position: absolute;
+        top: 5px;
+        left: 10px;
+    }
+
+    /* Header */
+    .main-header {
+        height: 250px; /* Increase header height for visibility */
+        font-size: 2rem; /* Adjust font size for header text */
+        padding: 20px; /* Add padding for spacing */
+        background-size: cover; /* Ensure the background image covers the header */
+        background-position: center; /* Center the background image */
+        position: relative; /* Enable positioning for child elements */
+    }
+
+    .main-header .subtitle {
+        font-size: 1rem; /* Adjust subtitle font size */
+    }
+
+    /* Adjust Images Around the Header */
+    .edge-image {
+        opacity: 0.8; /* Slight transparency for subtle effect */
+    }
+
+    .edge-image-bottom-left {
+        bottom: 10px;
+        left: 10px;
+        width: 100px; /* Smaller image size */
+    }
+
+    .edge-image-bottom-right {
+        bottom: 10px;
+        right: 10px;
+        width: 100px; /* Smaller image size */
+    }
+
+    .edge-image-top-left {
+        top: 10px;
+        left: 10px;
+        width: 80px; /* Smaller image size */
+        display: block; /* Ensure visibility */
+    }
+
+    .edge-image-top-right {
+        top: 10px;
+        right: 10px;
+        width: 80px; /* Smaller image size */
+        display: block; /* Ensure visibility */
+    }
+
+    /* Sections */
+    section {
+        padding: 20px 10px; /* Reduce padding for sections */
+        margin: 15px auto; /* Adjust margin between sections */
+    }
+
+    section h2 {
+        font-size: 1.5rem; /* Smaller font size for section headings */
+    }
+
+    section .subsection {
+        padding: 15px; /* Reduce padding inside subsections */
+    }
+
+    section .subsection h3 {
+        font-size: 1.2rem; /* Adjust subsection heading font size */
+    }
+
+    section .subsection p {
+        font-size: 0.9rem; /* Adjust paragraph font size */
+    }
+}

@@ -1524,57 +1524,49 @@ section {
     scroll-margin-top: 100px; /* Add space equal to or slightly larger than the height of the nav bar */
 }
 
-/* General Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     /* Navigation Bar */
     .Nav {
-        flex-direction: column; /* Stack items vertically */
-        align-items: flex-start; /* Align items to the left */
-        height: auto; /* Allow the height to adjust dynamically */
-        padding: 10px 20px; /* Add padding for smaller screens */
+        height: 40px; /* Reduce the height of the nav bar */
+        padding: 5px 10px; /* Minimize padding */
     }
 
-    .Nav .right-buttons {
-        flex-direction: column; /* Stack buttons vertically */
-        gap: 10px; /* Add spacing between buttons */
-        width: 100%; /* Make buttons take full width */
-    }
-
-    .Nav .menu-container,
-    .Nav .superintendent {
-        width: 100%; /* Full width for mobile */
+    .Nav .logo img {
+        height: 25px; /* Smaller logo size */
+        width: auto;
     }
 
     .Nav .menu-button,
     .Nav .superintendent a {
-        width: 100%; /* Fill the container */
-        text-align: center; /* Center-align text */
+        font-size: 12px; /* Smaller font size for buttons */
+        padding: 3px 5px; /* Reduce padding for buttons */
     }
 
-    .Nav .dropdown {
-        width: 100%; /* Full width for dropdown */
-        right: auto; /* Reset alignment for mobile */
+    .Nav .right-buttons {
+        gap: 5px; /* Reduce spacing between buttons */
     }
 
     /* Header */
     .main-header {
-        height: auto; /* Allow the height to adjust dynamically */
-        padding: 20px; /* Add padding for smaller screens */
-        font-size: 1.8rem; /* Reduce font size for smaller screens */
+        height: 250px; /* Increase header height for visibility */
+        font-size: 2rem; /* Adjust font size for header text */
+        padding: 20px; /* Add padding for spacing */
+        background-size: cover; /* Ensure the background image covers the header */
+        background-position: center; /* Center the background image */
     }
 
     .main-header .subtitle {
-        font-size: 1rem; /* Reduce subtitle font size */
+        font-size: 1rem; /* Adjust subtitle font size */
     }
 
     /* Sections */
     section {
-        padding: 20px; /* Reduce padding for smaller screens */
-        margin: 10px auto; /* Reduce margin between sections */
+        padding: 20px 10px; /* Reduce padding for sections */
+        margin: 15px auto; /* Adjust margin between sections */
     }
 
     section h2 {
-        font-size: 1.8rem; /* Reduce heading font size */
+        font-size: 1.5rem; /* Smaller font size for section headings */
     }
 
     section .subsection {
@@ -1582,178 +1574,11 @@ section {
     }
 
     section .subsection h3 {
-        font-size: 1.2rem; /* Reduce subsection heading font size */
+        font-size: 1.2rem; /* Adjust subsection heading font size */
     }
 
     section .subsection p {
-        font-size: 0.9rem; /* Reduce paragraph font size */
-    }
-
-    /* Side-by-Side Containers */
-    .side-by-side {
-        flex-direction: column; /* Stack containers vertically */
-        gap: 20px; /* Add spacing between stacked containers */
-    }
-
-    .side-by-side .subsection {
-        min-width: 100%; /* Allow subsections to take full width */
-    }
-
-    /* Vertical Side-by-Side Containers */
-    .vertical-side-by-side {
-        gap: 20px; /* Add spacing between stacked containers */
-    }
-
-    /* Dropdown Menu */
-    .Nav .dropdown {
-        width: 100%; /* Full width for dropdown */
-        right: auto; /* Reset alignment for mobile */
-    }
-
-    .Nav .dropdown li a {
-        font-size: 14px; /* Reduce font size for dropdown links */
-        padding: 8px; /* Adjust padding for smaller screens */
-    }
-
-    /* Mission Statement Section */
-    .mission-statement {
-        padding: 30px 20px; /* Reduce padding for smaller screens */
-        font-size: 1rem; /* Reduce font size */
-    }
-
-    .mission-statement h2 {
-        font-size: 1.8rem; /* Reduce heading font size */
-    }
-
-    .mission-statement p {
-        font-size: 0.9rem; /* Reduce paragraph font size */
-    }
-
-    /* Cards */
-    .card-container {
-        flex-direction: column; /* Stack cards vertically */
-        gap: 20px; /* Add spacing between cards */
-    }
-
-    .card-container .card {
-        width: 100%; /* Allow cards to take full width */
+        font-size: 0.9rem; /* Adjust paragraph font size */
     }
 }
 
-/* Extra Small Screens (max-width: 480px) */
-@media (max-width: 480px) {
-    /* Navigation Bar */
-    .Nav {
-        padding: 10px; /* Reduce padding for very small screens */
-    }
-
-    .Nav .menu-button,
-    .Nav .superintendent a {
-        font-size: 14px; /* Reduce font size for buttons */
-        padding: 8px; /* Adjust padding for smaller buttons */
-    }
-
-    /* Header */
-    .main-header {
-        font-size: 1.5rem; /* Further reduce font size */
-    }
-
-    .main-header .subtitle {
-        font-size: 0.9rem; /* Further reduce subtitle font size */
-    }
-
-    /* Sections */
-    section {
-        padding: 15px; /* Further reduce padding */
-    }
-
-    section h2 {
-        font-size: 1.5rem; /* Further reduce heading font size */
-    }
-
-    section .subsection {
-        padding: 10px; /* Further reduce padding inside subsections */
-    }
-
-    section .subsection h3 {
-        font-size: 1rem; /* Further reduce subsection heading font size */
-    }
-
-    section .subsection p {
-        font-size: 0.8rem; /* Further reduce paragraph font size */
-    }
-
-    /* Cards */
-    .card-container .card {
-        padding: 15px; /* Reduce padding inside cards */
-    }
-}
-
-/* Responsive Design for Navigation Bar */
-@media (max-width: 768px) {
-    .Nav {
-        height: 30px; /* Reduce the height of the nav bar */
-        padding: 5px 15px; /* Reduce padding inside the nav bar */
-    }
-
-    .Nav .logo img.new-logo {
-        height: 50px; /* Reduce the size of the new logo */
-        width: 50px; /* Maintain proportional width */
-        margin-top: 0; /* Remove extra margin */
-    }
-
-    .Nav .logo img.apple {
-        height: 24px; /* Reduce the size of the original logo */
-        width: 80px; /* Maintain proportional width */
-    }
-
-    .Nav .menu-button,
-    .Nav .superintendent a {
-        font-size: 14px; /* Reduce font size for buttons */
-        padding: 5px 10px; /* Reduce padding for buttons */
-    }
-
-    .Nav .right-buttons {
-        gap: 5px; /* Reduce spacing between buttons */
-    }
-}
-
-/* Extra Small Screens (max-width: 480px) */
-@media (max-width: 480px) {
-    /* Navigation Bar */
-    .Nav {
-        height: 40px; /* Reduce the height of the nav bar */
-        padding: 5px 10px; /* Reduce padding even more */
-    }
-
-    .Nav .logo img.new-logo {
-        height: 30px; /* Further reduce the size of the new logo */
-        width: 30px; /* Maintain proportional width */
-    }
-
-    .Nav .logo img.apple {
-        height: 16px; /* Further reduce the size of the original logo */
-        width: 60px; /* Maintain proportional width */
-    }
-
-    .Nav .menu-button,
-    .Nav .superintendent a {
-        font-size: 10px; /* Further reduce font size for buttons */
-        padding: 2px 5px; /* Further reduce padding for buttons */
-    }
-
-    .Nav .right-buttons {
-        gap: 2px; /* Further reduce spacing between buttons */
-    }
-
-    /* Header */
-    .main-header {
-        height: 200px; /* Increase the height of the header */
-        font-size: 1.8rem; /* Adjust font size for the header text */
-        padding: 20px; /* Add padding for better spacing */
-    }
-
-    .main-header .subtitle {
-        font-size: 1rem; /* Adjust subtitle font size */
-    }
-}

@@ -1720,28 +1720,40 @@ section {
 
 /* Extra Small Screens (max-width: 480px) */
 @media (max-width: 480px) {
+    /* Navigation Bar */
     .Nav {
-        height: 50px; /* Further reduce the height of the nav bar */
+        height: 40px; /* Reduce the height of the nav bar */
         padding: 5px 10px; /* Reduce padding even more */
     }
 
     .Nav .logo img.new-logo {
-        height: 40px; /* Further reduce the size of the new logo */
-        width: 40px; /* Maintain proportional width */
+        height: 30px; /* Further reduce the size of the new logo */
+        width: 30px; /* Maintain proportional width */
     }
 
     .Nav .logo img.apple {
-        height: 20px; /* Further reduce the size of the original logo */
-        width: 70px; /* Maintain proportional width */
+        height: 16px; /* Further reduce the size of the original logo */
+        width: 60px; /* Maintain proportional width */
     }
 
     .Nav .menu-button,
     .Nav .superintendent a {
-        font-size: 12px; /* Further reduce font size for buttons */
-        padding: 3px 8px; /* Further reduce padding for buttons */
+        font-size: 10px; /* Further reduce font size for buttons */
+        padding: 2px 5px; /* Further reduce padding for buttons */
     }
 
     .Nav .right-buttons {
-        gap: 3px; /* Further reduce spacing between buttons */
+        gap: 2px; /* Further reduce spacing between buttons */
+    }
+
+    /* Header */
+    .main-header {
+        height: 200px; /* Increase the height of the header */
+        font-size: 1.8rem; /* Adjust font size for the header text */
+        padding: 20px; /* Add padding for better spacing */
+    }
+
+    .main-header .subtitle {
+        font-size: 1rem; /* Adjust subtitle font size */
     }
 }

@@ -1692,7 +1692,7 @@ section {
 /* Responsive Design for Navigation Bar */
 @media (max-width: 768px) {
     .Nav {
-        height: 60px; /* Reduce the height of the nav bar */
+        height: 30px; /* Reduce the height of the nav bar */
         padding: 5px 15px; /* Reduce padding inside the nav bar */
     }
 

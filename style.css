@@ -1716,45 +1716,4 @@ section h2 {
     color: #002575;
 }
 
-/* Responsive Design for Phones */
-@media (max-width: 480px) {
-    /* Navigation Bar */
-    .Nav {
-        height: 40px; /* Smaller nav bar */
-        padding: 5px 10px;
-    }
 
-    .Nav .logo img {
-        height: 25px; /* Smaller logo */
-    }
-
-    .Nav .menu-button,
-    .Nav .superintendent a {
-        font-size: 12px; /* Smaller font size */
-        padding: 3px 5px;
-    }
-
-    /* Header */
-    .main-header {
-        height: 200px; /* Adjust header height */
-        font-size: 2rem;
-    }
-
-    .main-header .subtitle {
-        font-size: 1rem;
-    }
-
-    /* Image Containers */
-    .edge-image {
-        width: 40px; /* Smaller images */
-    }
-
-    /* Sections */
-    section {
-        padding: 20px 10px;
-    }
-
-    section h2 {
-        font-size: 1.5rem;
-    }
-}

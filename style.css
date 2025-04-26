@@ -1524,6 +1524,182 @@ section {
     scroll-margin-top: 100px; /* Add space equal to or slightly larger than the height of the nav bar */
 }
 
+@media (max-width: 480px) {
+    /* Navigation Bar */
+    .Nav {
+        height: 40px; /* Reduce the height of the nav bar */
+        padding: 5px 10px; /* Minimize padding */
+    }
+
+    .Nav .logo img {
+        height: 25px; /* Smaller logo size */
+        width: auto;
+    }
+
+    .Nav .menu-button,
+    .Nav .superintendent a {
+        font-size: 12px; /* Smaller font size for buttons */
+        padding: 3px 5px; /* Reduce padding for buttons */
+    }
+
+    .Nav .right-buttons {
+        gap: 5px; /* Reduce spacing between buttons */
+    }
+
+    /* Header */
+    .main-header {
+        height: 250px; /* Increase header height for visibility */
+        font-size: 2rem; /* Adjust font size for header text */
+        padding: 20px; /* Add padding for spacing */
+        background-size: cover; /* Ensure the background image covers the header */
+        background-position: center; /* Center the background image */
+    }
+
+    .main-header .subtitle {
+        font-size: 1rem; /* Adjust subtitle font size */
+    }
+
+    /* Sections */
+    section {
+        padding: 20px 10px; /* Reduce padding for sections */
+        margin: 15px auto; /* Adjust margin between sections */
+    }
+
+    section h2 {
+        font-size: 1.5rem; /* Smaller font size for section headings */
+    }
+
+    section .subsection {
+        padding: 15px; /* Reduce padding inside subsections */
+    }
+
+    section .subsection h3 {
+        font-size: 1.2rem; /* Adjust subsection heading font size */
+    }
+
+    section .subsection p {
+        font-size: 0.9rem; /* Adjust paragraph font size */
+    }
+}
+@media (max-width: 480px) {
+    /* Navigation Bar */
+    .Nav {
+        height: 40px; /* Reduce the height of the nav bar */
+        padding: 5px 10px; /* Minimize padding */
+        justify-content: space-between; /* Align items to the edges */
+    }
+
+    .Nav .logo img {
+        height: 25px; /* Smaller logo size */
+        width: auto;
+    }
+
+    .Nav .right-buttons {
+        flex-direction: row; /* Keep buttons in a row */
+        gap: 5px; /* Reduce spacing between buttons */
+    }
+
+    .Nav .menu-button,
+    .Nav .superintendent a {
+        font-size: 12px; /* Smaller font size for buttons */
+        padding: 3px 5px; /* Reduce padding for buttons */
+    }
+
+    /* Move Menu and Superintendent Buttons to the Top-Right */
+    .Nav .menu-container {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+    }
+
+    .Nav .superintendent {
+        position: absolute;
+        top: 5px;
+        left: 10px;
+    }
+
+    /* Header */
+    .main-header {
+        height: 250px; /* Increase header height for visibility */
+        font-size: 2rem; /* Adjust font size for header text */
+        padding: 20px; /* Add padding for spacing */
+        background-size: cover; /* Ensure the background image covers the header */
+        background-position: center; /* Center the background image */
+        position: relative; /* Enable positioning for child elements */
+    }
+
+    .main-header .subtitle {
+        font-size: 1rem; /* Adjust subtitle font size */
+    }
+
+    /* Adjust Images Around the Header */
+    .edge-image {
+        opacity: 0.8; /* Slight transparency for subtle effect */
+    }
+
+    .edge-image-bottom-left {
+        bottom: 10px;
+        left: 10px;
+        width: 100px; /* Smaller image size */
+    }
+
+    .edge-image-bottom-right {
+        bottom: 10px;
+        right: 10px;
+        width: 100px; /* Smaller image size */
+    }
+
+    .edge-image-top-left {
+        top: 10px;
+        left: 10px;
+        width: 80px; /* Smaller image size */
+        display: block; /* Ensure visibility */
+    }
+
+    .edge-image-top-right {
+        top: 10px;
+        right: 10px;
+        width: 80px; /* Smaller image size */
+        display: block; /* Ensure visibility */
+    }
+
+    /* Sections */
+    section {
+        padding: 20px 10px; /* Reduce padding for sections */
+        margin: 15px auto; /* Adjust margin between sections */
+    }
+
+    section h2 {
+        font-size: 1.5rem; /* Smaller font size for section headings */
+    }
+
+    section .subsection {
+        padding: 15px; /* Reduce padding inside subsections */
+    }
+
+    section .subsection h3 {
+        font-size: 1.2rem; /* Adjust subsection heading font size */
+    }
+
+    section .subsection p {
+        font-size: 0.9rem; /* Adjust paragraph font size */
+    }
+}
+
+.card-container {
+    max-width: 900px; /* Increase the maximum width */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add some padding around the container */
+}
+
+.card {
+    padding: 20px; /* Add more padding inside the card */
+    border: 1px solid #ddd; /* Optional: Add a border for better visibility */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    background-color: #fff; /* Optional: Add a background color */
+}
+
 .card-container {
     max-width: 1200px; /* Increase the maximum width of the container */
     margin: 0 auto; /* Center the container */

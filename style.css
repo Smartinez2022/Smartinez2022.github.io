@@ -1523,3 +1523,23 @@ section .subsection p {
 section {
     scroll-margin-top: 100px; /* Add space equal to or slightly larger than the height of the nav bar */
 }
+
+.card-container {
+    max-width: 1200px; /* Increase the maximum width of the container */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add some padding around the container */
+    display: flex; /* Ensure cards are displayed in a row */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px; /* Add spacing between cards */
+}
+
+.card {
+    flex: 1 1 calc(45% - 20px); /* Make each card take up 45% of the container width */
+    padding: 20px; /* Add padding inside the card */
+    border: 1px solid #ddd; /* Optional: Add a border for better visibility */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    background-color: #fff; /* Optional: Add a background color */
+    min-width: 300px; /* Ensure a minimum width for smaller screens */
+    max-width: 500px; /* Limit the maximum width of each card */
+}

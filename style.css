@@ -1712,10 +1712,1544 @@ section {
 .card {
     flex: 1 1 calc(45% - 20px); /* Make each card take up 45% of the container width */
     padding: 20px; /* Add padding inside the card */
-    border: 1px solid #ddd; /* Optional: Add a border for better visibility */
     border-radius: 10px; /* Optional: Add rounded corners */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
     background-color: #fff; /* Optional: Add a background color */
     min-width: 300px; /* Ensure a minimum width for smaller screens */
     max-width: 500px; /* Limit the maximum width of each card */
 }
+
+/* Accordion Container */
+.accordion {
+    border: 2px solid #0047ab; /* Add a bold blue border around the accordion */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Prevent content from overflowing */
+    margin-bottom: 20px; /* Add spacing below the accordion */
+    background-color: #f4f4f4; /* Light gray background for the accordion */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+}
+
+/* Accordion Item */
+.accordion-item {
+    border-bottom: 1px solid #ddd; /* Divider between items */
+}
+
+.accordion-item:last-child {
+    border-bottom: none; /* Remove border for the last item */
+}
+
+/* Accordion Button */
+.accordion-button {
+    width: 100%; /* Full width */
+    padding: 15px; /* Add padding for spacing */
+    text-align: left; /* Align text to the left */
+    background-color: #e8f0fe; /* Light blue background */
+    border: none; /* Remove default border */
+    outline: none; /* Remove focus outline */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1rem; /* Font size for the button */
+    font-family: 'Audiowide', Arial, sans-serif; /* Match the website font */
+    font-weight: bold; /* Bold text */
+    position: relative; /* Enable positioning for the arrow */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Add Down Arrow to Accordion Button */
+.accordion-button::after {
+    content: '\25BC'; /* Unicode for down arrow */
+    position: absolute;
+    right: 15px; /* Position the arrow on the right */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for centering */
+    font-size: 0.8rem; /* Smaller size for the arrow */
+    color: #333; /* Dark gray color for the arrow */
+    transition: transform 0.3s ease; /* Smooth rotation */
+}
+
+/* Rotate Arrow When Active */
+.accordion-button.active::after {
+    transform: translateY(-50%) rotate(180deg); /* Rotate the arrow upward */
+}
+
+/* Hover Effect for Accordion Button */
+.accordion-button:hover {
+    background-color: #d0e7ff; /* Slightly darker blue background on hover */
+}
+
+/* Accordion Content */
+.accordion-content {
+    max-height: 0; /* Hidden by default */
+    overflow: hidden; /* Prevent content overflow */
+    transition: max-height 0.3s ease, padding 0.3s ease; /* Smooth expand/collapse */
+    padding: 0 15px; /* Add horizontal padding but no vertical padding initially */
+    background-color: #163a5f; /* Dark blue background for the content */
+    font-size: 0.9rem; /* Smaller font size for content */
+    font-family: 'Audiowide', Arial, sans-serif; /* Match the website font */
+    line-height: 1.6; /* Improve readability */
+    color: #fff; /* White text color for contrast */
+    border-top: 1px solid #0047ab; /* Add a border at the top of the content */
+}
+
+/* Active Accordion Content */
+.accordion-content.active {
+    max-height: 200px; /* Adjust based on the expected height of the content */
+    padding: 15px; /* Add vertical padding when active */
+}
+
+/* Prompt List Styling */
+.prompt-list {
+    list-style-type: disc; /* Use default bullet points */
+    padding-left: 20px; /* Add padding to the left for indentation */
+    line-height: 2; /* Increase line spacing for better readability */
+    font-size: 1.1rem; /* Slightly larger font size */
+    color: #444; /* Dark gray text for better contrast */
+}
+
+/* Prompt List Links */
+.prompt-list a {
+    text-decoration: none; /* Remove underline from links */
+    color: #00796b; /* Teal color for links */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.prompt-list a:hover {
+    color: #004d40; /* Darker teal on hover */
+}
+
+/* Card Styling */
+.card {
+    background-color: #f9f9f9; /* Light gray background for the card */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Add padding inside the card */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Side-by-Side Layout for Cards */
+.side-by-side {
+    display: flex; /* Use flexbox for side-by-side layout */
+    gap: 20px; /* Add spacing between the containers */
+    justify-content: space-between; /* Spread the containers evenly */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Card Styling */
+.card {
+    flex: 1 1 calc(50% - 20px); /* Each card takes up 50% of the container width minus the gap */
+    background-color: #f9f9f9; /* Light gray background for the card */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Add padding inside the card */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    min-width: 300px; /* Ensure a minimum width for smaller screens */
+    max-width: 500px; /* Limit the maximum width of each card */
+}
+
+/* Prompt List Styling */
+.prompt-list {
+    list-style-type: disc; /* Use default bullet points */
+    padding-left: 20px; /* Add padding to the left for indentation */
+    line-height: 2; /* Increase line spacing for better readability */
+    font-size: 1.1rem; /* Slightly larger font size */
+    color: #444; /* Dark gray text for better contrast */
+}
+
+/* Prompt List Links */
+.prompt-list a {
+    text-decoration: none; /* Remove underline from links */
+    color: #00796b; /* Teal color for links */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.prompt-list a:hover {
+    color: #004d40; /* Darker teal on hover */
+}
+
+/* Resource Category Styling */
+.resource-category h4 {
+    font-size: 1.2rem; /* Slightly larger font size for category headings */
+    margin-bottom: 10px; /* Add spacing below the heading */
+    color: #333; /* Dark gray text */
+}
+
+.resource-category a {
+    text-decoration: none; /* Remove underline from links */
+    color: #00796b; /* Teal color for links */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.resource-category a:hover {
+    color: #004d40; /* Darker teal on hover */
+}
+
+/* Outer Container for Cards */
+.card-container {
+    max-width: 900px; /* Match the width of other sections */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add padding around the container */
+    display: flex; /* Use flexbox for side-by-side layout */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px; /* Add spacing between cards */
+}
+
+/* Individual Card Styling */
+.card {
+    flex: 1 1 calc(48% - 20px); /* Each card takes up 48% of the container width minus the gap */
+    padding: 30px; /* Add more padding inside the card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-color: #fff; /* White background for the card */
+    min-width: 350px; /* Ensure a minimum width for smaller screens */
+    max-width: 600px; /* Limit the maximum width of each card */
+    text-align: left; /* Align text to the left */
+}
+
+/* Prompt List Styling */
+.prompt-list {
+    list-style-type: disc; /* Use default bullet points */
+    padding-left: 20px; /* Add padding to the left for indentation */
+    line-height: 2; /* Increase line spacing for better readability */
+    font-size: 1.1rem; /* Slightly larger font size */
+    color: #444; /* Dark gray text for better contrast */
+}
+
+/* Prompt List Links */
+.prompt-list a {
+    text-decoration: none; /* Remove underline from links */
+    color: #00796b; /* Teal color for links */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.prompt-list a:hover {
+    color: #004d40; /* Darker teal on hover */
+}
+
+/* Resource Category Styling */
+.resource-category h4 {
+    font-size: 1.2rem; /* Slightly larger font size for category headings */
+    margin-bottom: 10px; /* Add spacing below the heading */
+    color: #333; /* Dark gray text */
+}
+
+.resource-category a {
+    text-decoration: none; /* Remove underline from links */
+    color: #00796b; /* Teal color for links */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.resource-category a:hover {
+    color: #004d40; /* Darker teal on hover */
+}
+
+/* Outer Container for Cards */
+.card-container {
+    max-width: 900px; /* Match the width of other sections */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add padding around the container */
+    display: flex; /* Use flexbox for side-by-side layout */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px; /* Add spacing between cards */
+    background-color: #e6f7e6; /* Light green background for the outer container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Individual Card Styling */
+.card {
+    flex: 1 1 calc(48% - 20px); /* Each card takes up 48% of the container width minus the gap */
+    padding: 30px; /* Add more padding inside the card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-color: #f0fff0; /* Very light green background for the cards */
+    border: 1px solid #b2d8b2; /* Subtle green border */
+    text-align: left; /* Align text to the left */
+}
+
+/* Prompt List Styling */
+.prompt-list {
+    list-style-type: disc; /* Use default bullet points */
+    padding-left: 20px; /* Add padding to the left for indentation */
+    line-height: 2; /* Increase line spacing for better readability */
+    font-size: 1.1rem; /* Slightly larger font size */
+    color: #444; /* Dark gray text for better contrast */
+}
+
+/* Prompt List Links */
+.prompt-list a {
+    text-decoration: none; /* Remove underline from links */
+    color: #00796b; /* Teal color for links */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.prompt-list a:hover {
+    color: #004d40; /* Darker teal on hover */
+}
+
+/* Resource Category Styling */
+.resource-category h4 {
+    font-size: 1.2rem; /* Slightly larger font size for category headings */
+    margin-bottom: 10px; /* Add spacing below the heading */
+    color: #2e7d32; /* Dark green text for headings */
+}
+
+.resource-category a {
+    text-decoration: none; /* Remove underline from links */
+    color: #00796b; /* Teal color for links */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.resource-category a:hover {
+    color: #004d40; /* Darker teal on hover */
+}
+
+/* Outer Container for Cards */
+.card-container {
+    max-width: 900px; /* Match the width of other sections */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add padding around the container */
+    display: flex; /* Use flexbox for side-by-side layout */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px; /* Add spacing between cards */
+    background-color: #c8e6c9; /* Darker green background for the outer container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Individual Card Styling */
+.card {
+    flex: 1 1 calc(48% - 20px); /* Each card takes up 48% of the container width minus the gap */
+    padding: 30px; /* Add more padding inside the card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-color: #a5d6a7; /* Slightly darker green background for the cards */
+    border: 1px solid #81c784; /* Subtle green border */
+    text-align: left; /* Align text to the left */
+}
+
+/* Prompt List Styling */
+.prompt-list {
+    list-style-type: disc; /* Use default bullet points */
+    padding-left: 20px; /* Add padding to the left for indentation */
+    line-height: 2; /* Increase line spacing for better readability */
+    font-size: 1.1rem; /* Slightly larger font size */
+    color: #444; /* Dark gray text for better contrast */
+}
+
+/* Prompt List Links */
+.prompt-list a {
+    text-decoration: none; /* Remove underline from links */
+    color: #00796b; /* Teal color for links */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.prompt-list a:hover {
+    color: #004d40; /* Darker teal on hover */
+}
+
+/* Resource Category Styling */
+.resource-category h4 {
+    font-size: 1.2rem; /* Slightly larger font size for category headings */
+    margin-bottom: 10px; /* Add spacing below the heading */
+    color: #2e7d32; /* Dark green text for headings */
+}
+
+.resource-category a {
+    text-decoration: none; /* Remove underline from links */
+    color: #00796b; /* Teal color for links */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.resource-category a:hover {
+    color: #004d40; /* Darker teal on hover */
+}
+
+/* Outer Container for Cards */
+.card-container {
+    max-width: 900px; /* Match the width of other sections */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add padding around the container */
+    display: flex; /* Use flexbox for side-by-side layout */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px; /* Add spacing between cards */
+    background-color: #2e7d32; /* Dark green background for the outer container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Individual Card Styling */
+.card {
+    flex: 1 1 calc(48% - 20px); /* Each card takes up 48% of the container width minus the gap */
+    padding: 30px; /* Add more padding inside the card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    background-color: #1b5e20; /* Even darker green background for the cards */
+    border: 1px solid #145a32; /* Dark green border */
+    text-align: left; /* Align text to the left */
+    color: #ffffff; /* White text for readability */
+}
+
+/* Prompt List Styling */
+.prompt-list {
+    list-style-type: disc; /* Use default bullet points */
+    padding-left: 20px; /* Add padding to the left for indentation */
+    line-height: 2; /* Increase line spacing for better readability */
+    font-size: 1.1rem; /* Slightly larger font size */
+    color: #c8e6c9; /* Light green text for better contrast */
+}
+
+/* Prompt List Links */
+.prompt-list a {
+    text-decoration: none; /* Remove underline from links */
+    color: #80cbc4; /* Teal color for links */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.prompt-list a:hover {
+    color: #4db6ac; /* Slightly darker teal on hover */
+}
+
+/* Resource Category Styling */
+.resource-category h4 {
+    font-size: 1.2rem; /* Slightly larger font size for category headings */
+    margin-bottom: 10px; /* Add spacing below the heading */
+    color: #a5d6a7; /* Light green text for headings */
+}
+
+.resource-category a {
+    text-decoration: none; /* Remove underline from links */
+    color: #80cbc4; /* Teal color for links */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.resource-category a:hover {
+    color: #4db6ac; /* Slightly darker teal on hover */
+}
+
+/* Outer Container for Cards */
+.card-container {
+    max-width: 900px; /* Match the width of other sections */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add padding around the container */
+    display: flex; /* Use flexbox for side-by-side layout */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px; /* Add spacing between cards */
+    background-color: #e3f2fd; /* Light blue background for the outer container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Individual Card Styling */
+.card {
+    flex: 1 1 calc(48% - 20px); /* Each card takes up 48% of the container width minus the gap */
+    padding: 30px; /* Add more padding inside the card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-color: #bbdefb; /* Slightly darker light blue background for the cards */
+    border: 1px solid #90caf9; /* Subtle blue border */
+    text-align: left; /* Align text to the left */
+    color: #333; /* Dark gray text for readability */
+}
+
+/* Prompt List Styling */
+.prompt-list {
+    list-style-type: disc; /* Use default bullet points */
+    padding-left: 20px; /* Add padding to the left for indentation */
+    line-height: 2; /* Increase line spacing for better readability */
+    font-size: 1.1rem; /* Slightly larger font size */
+    color: #444; /* Dark gray text for better contrast */
+}
+
+/* Prompt List Links */
+.prompt-list a {
+    text-decoration: none; /* Remove underline from links */
+    color: #1565c0; /* Blue color for links */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.prompt-list a:hover {
+    color: #0d47a1; /* Darker blue on hover */
+}
+
+/* Resource Category Styling */
+.resource-category h4 {
+    font-size: 1.2rem; /* Slightly larger font size for category headings */
+    margin-bottom: 10px; /* Add spacing below the heading */
+    color: #1e88e5; /* Medium blue text for headings */
+}
+
+.resource-category a {
+    text-decoration: none; /* Remove underline from links */
+    color: #1565c0; /* Blue color for links */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.resource-category a:hover {
+    color: #0d47a1; /* Darker blue on hover */
+}
+
+/* Outer Container for Cards */
+.card-container {
+    max-width: 900px; /* Match the width of other sections */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add padding around the container */
+    display: flex; /* Use flexbox for side-by-side layout */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px; /* Add spacing between cards */
+    background-color: #e3f2fd; /* Light blue background for the outer container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Individual Card Styling */
+.card {
+    flex: 1 1 calc(48% - 20px); /* Each card takes up 48% of the container width minus the gap */
+    padding: 30px; /* Add more padding inside the card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-color: #bbdefb; /* Slightly darker light blue background for the cards */
+    border: 1px solid #90caf9; /* Subtle blue border */
+    text-align: left; /* Align text to the left */
+    color: #000; /* Black text for readability */
+}
+
+/* Prompt List Styling */
+.prompt-list {
+    list-style-type: disc; /* Use default bullet points */
+    padding-left: 20px; /* Add padding to the left for indentation */
+    line-height: 2; /* Increase line spacing for better readability */
+    font-size: 1.1rem; /* Slightly larger font size */
+    color: #000; /* Black text for better contrast */
+}
+
+/* Prompt List Links */
+.prompt-list a {
+    text-decoration: none; /* Remove underline from links */
+    color: #1565c0; /* Blue color for links */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.prompt-list a:hover {
+    color: #0d47a1; /* Darker blue on hover */
+}
+
+/* Resource Category Styling */
+.resource-category h4 {
+    font-size: 1.2rem; /* Slightly larger font size for category headings */
+    margin-bottom: 10px; /* Add spacing below the heading */
+    color: #000; /* Black text for headings */
+}
+
+.resource-category a {
+    text-decoration: none; /* Remove underline from links */
+    color: #1565c0; /* Blue color for links */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.resource-category a:hover {
+    color: #0d47a1; /* Darker blue on hover */
+}
+
+/* Resources Section Header */
+#resources-tutorials h2 {
+    color: #000; /* Set the header text color to black */
+    font-size: 2rem; /* Adjust font size for the header */
+    text-align: center; /* Center-align the header */
+    margin-bottom: 20px; /* Add spacing below the header */
+    text-transform: uppercase; /* Make the text uppercase for emphasis */
+    letter-spacing: 1.5px; /* Add spacing between letters */
+}
+
+/* Prompt List Links */
+.prompt-list a {
+    text-decoration: none; /* Remove underline from links */
+    color: #1565c0; /* Blue color for links */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+    position: relative; /* Enable positioning for the indicator */
+}
+
+/* Hover Effect for Links */
+.prompt-list a:hover {
+    color: #0d47a1; /* Darker blue on hover */
+}
+
+/* Prompt List Links */
+.prompt-list a {
+    text-decoration: none; /* Remove underline from links */
+    color: #1565c0; /* Blue color for links */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+    display: inline-flex; /* Use inline-flex to align the link and indicator */
+    align-items: center; /* Vertically align the text and indicator */
+}
+
+/* Hover Effect for Links */
+.prompt-list a:hover {
+    color: #0d47a1; /* Darker blue on hover */
+}
+
+/* Outer Container for Resources and Prompts */
+.card-container {
+    max-width: 900px; /* Match the width of other sections */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add padding around the container */
+}
+
+/* Side-by-Side Layout for Cards */
+.side-by-side {
+    display: flex; /* Use flexbox for side-by-side layout */
+    gap: 20px; /* Add spacing between the containers */
+    justify-content: space-between; /* Spread the containers evenly */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Individual Card Styling */
+.card {
+    flex: 1 1 calc(48% - 20px); /* Each card takes up 48% of the container width minus the gap */
+    padding: 30px; /* Add padding inside the card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-color: #bbdefb; /* Light blue background for the cards */
+    border: 1px solid #90caf9; /* Subtle blue border */
+    text-align: left; /* Align text to the left */
+    color: #000; /* Black text for readability */
+    min-width: 300px; /* Ensure a minimum width for smaller screens */
+    max-width: 500px; /* Limit the maximum width of each card */
+}
+
+/* Prompt List Styling */
+.prompt-list {
+    list-style-type: disc; /* Use default bullet points */
+    padding-left: 20px; /* Add padding to the left for indentation */
+    line-height: 2; /* Increase line spacing for better readability */
+    font-size: 1.1rem; /* Slightly larger font size */
+    color: #000; /* Black text for better contrast */
+}
+
+/* Prompt List Links */
+.prompt-list a {
+    text-decoration: none; /* Remove underline from links */
+    color: #1565c0; /* Blue color for links */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+    display: inline-flex; /* Use inline-flex to align the link and indicator */
+    align-items: center; /* Vertically align the text and indicator */
+}
+
+.prompt-list a:hover {
+    color: #0d47a1; /* Darker blue on hover */
+}
+
+/* ChatGPT Indicator Styling */
+.chatgpt-indicator {
+    font-size: 0.9rem; /* Smaller font size for the indicator */
+    color: #555; /* Gray color for the indicator */
+    margin-left: 5px; /* Add spacing between the link and the indicator */
+    font-style: italic; /* Italicize the indicator text */
+}
+
+/* Resource Category Styling */
+.resource-category h4 {
+    font-size: 1.2rem; /* Slightly larger font size for category headings */
+    margin-bottom: 10px; /* Add spacing below the heading */
+    color: #000; /* Black text for headings */
+}
+
+.resource-category a {
+    text-decoration: none; /* Remove underline from links */
+    color: #1565c0; /* Blue color for links */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.resource-category a:hover {
+    color: #0d47a1; /* Darker blue on hover */
+}
+
+/* General Text Styling */
+body {
+    font-family: 'Lato', Arial, sans-serif; /* Use a clean, modern font */
+    color: #333; /* Dark gray text for readability */
+    line-height: 1.8; /* Increase line height for better readability */
+    font-size: 16px; /* Base font size */
+}
+
+/* Card Container */
+.card-container {
+    max-width: 900px; /* Match the width of other sections */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add padding around the container */
+    display: flex; /* Use flexbox for side-by-side layout */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px; /* Add spacing between cards */
+    background-color: #f9f9f9; /* Light gray background for the outer container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Individual Card Styling */
+.card {
+    flex: 1 1 calc(48% - 20px); /* Each card takes up 48% of the container width minus the gap */
+    padding: 25px; /* Add padding inside the card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-color: #ffffff; /* White background for the cards */
+    border: 1px solid #ddd; /* Subtle border */
+    text-align: left; /* Align text to the left */
+    color: #333; /* Dark gray text for readability */
+    min-width: 300px; /* Ensure a minimum width for smaller screens */
+    max-width: 500px; /* Limit the maximum width of each card */
+}
+
+/* Card Headings */
+.card h3 {
+    font-size: 1.5rem; /* Larger font size for card headings */
+    color: #1565c0; /* Blue color for headings */
+    margin-bottom: 15px; /* Add spacing below the heading */
+    font-weight: bold; /* Make headings bold */
+}
+
+/* Prompt List Styling */
+.prompt-list {
+    list-style-type: disc; /* Use default bullet points */
+    padding-left: 20px; /* Add padding to the left for indentation */
+    line-height: 1.8; /* Increase line spacing for better readability */
+    font-size: 1rem; /* Standard font size for list items */
+    color: #444; /* Dark gray text for better contrast */
+}
+
+/* Prompt List Links */
+.prompt-list a {
+    text-decoration: none; /* Remove underline from links */
+    color: #1565c0; /* Blue color for links */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+    display: inline-flex; /* Use inline-flex to align the link and indicator */
+    align-items: center; /* Vertically align the text and indicator */
+}
+
+.prompt-list a:hover {
+    color: #0d47a1; /* Darker blue on hover */
+}
+
+/* ChatGPT Indicator Styling */
+.chatgpt-indicator {
+    font-size: 0.9rem; /* Smaller font size for the indicator */
+    color: #555; /* Gray color for the indicator */
+    margin-left: 5px; /* Add spacing between the link and the indicator */
+    font-style: italic; /* Italicize the indicator text */
+}
+
+/* Resource Category Styling */
+.resource-category h4 {
+    font-size: 1.3rem; /* Slightly larger font size for category headings */
+    margin-bottom: 10px; /* Add spacing below the heading */
+    color: #1565c0; /* Blue color for headings */
+    font-weight: bold; /* Make headings bold */
+}
+
+.resource-category a {
+    text-decoration: none; /* Remove underline from links */
+    color: #1565c0; /* Blue color for links */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.resource-category a:hover {
+    color: #0d47a1; /* Darker blue on hover */
+}
+
+/* Resources Section Header */
+#resources-tutorials h2 {
+    color: #1565c0; /* Blue color for the header */
+    font-size: 2rem; /* Adjust font size for the header */
+    text-align: center; /* Center-align the header */
+    margin-bottom: 20px; /* Add spacing below the header */
+    text-transform: uppercase; /* Make the text uppercase for emphasis */
+    letter-spacing: 1.5px; /* Add spacing between letters */
+    font-weight: bold; /* Make the header bold */
+}
+
+/* Outer Container for Resources and Prompts */
+.card-container {
+    max-width: 900px; /* Keep the outer container width the same */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add padding around the container */
+    display: flex; /* Use flexbox for side-by-side layout */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px; /* Add spacing between cards */
+}
+
+/* Individual Card Styling */
+.card {
+    flex: 1 1 calc(100% / 2 - 30px); /* Make each card take up 50% of the container width minus the gap */
+    padding: 30px; /* Add padding inside the card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-color: #ffffff; /* White background for the cards */
+    border: 1px solid #ddd; /* Subtle border */
+    text-align: left; /* Align text to the left */
+    color: #333; /* Dark gray text for readability */
+    min-width: 400px; /* Ensure a wider minimum width for better text fit */
+    max-width: 450px; /* Limit the maximum width of each card */
+}
+
+/* Prompt List Styling */
+.prompt-list {
+    list-style-type: disc; /* Use default bullet points */
+    padding-left: 20px; /* Add padding to the left for indentation */
+    line-height: 1.8; /* Increase line spacing for better readability */
+    font-size: 1rem; /* Standard font size for list items */
+    color: #444; /* Dark gray text for better contrast */
+}
+
+/* Prompt List Links */
+.prompt-list a {
+    text-decoration: none; /* Remove underline from links */
+    color: #1565c0; /* Blue color for links */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+    display: inline-flex; /* Use inline-flex to align the link and indicator */
+    align-items: center; /* Vertically align the text and indicator */
+}
+
+.prompt-list a:hover {
+    color: #0d47a1; /* Darker blue on hover */
+}
+
+/* ChatGPT Indicator Styling */
+.chatgpt-indicator {
+    font-size: 0.9rem; /* Smaller font size for the indicator */
+    color: #555; /* Gray color for the indicator */
+    margin-left: 5px; /* Add spacing between the link and the indicator */
+    font-style: italic; /* Italicize the indicator text */
+}
+
+/* Resource Category Styling */
+.resource-category h4 {
+    font-size: 1.3rem; /* Slightly larger font size for category headings */
+    margin-bottom: 10px; /* Add spacing below the heading */
+    color: #1565c0; /* Blue color for headings */
+    font-weight: bold; /* Make headings bold */
+}
+
+.resource-category a {
+    text-decoration: none; /* Remove underline from links */
+    color: #1565c0; /* Blue color for links */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.resource-category a:hover {
+    color: #0d47a1; /* Darker blue on hover */
+}
+
+/* Prompt List Styling */
+.prompt-list {
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    background-color: #f9f9f9; /* Light gray background for the list */
+    border-radius: 10px; /* Rounded corners for the list */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    overflow: hidden; /* Ensure the list stays within the container */
+}
+
+/* Prompt List Items */
+.prompt-list li {
+    display: flex; /* Align items horizontally */
+    align-items: center; /* Vertically align items */
+    padding: 15px; /* Add padding inside each list item */
+    font-size: 1rem; /* Standard font size */
+    color: #333; /* Dark gray text for readability */
+    position: relative; /* Enable positioning for the logo */
+}
+
+/* ChatGPT Logo */
+.chatgpt-logo {
+    width: 20px; /* Set the width of the logo */
+    height: 20px; /* Set the height of the logo */
+    margin-right: 10px; /* Add spacing between the logo and the text */
+}
+
+/* Horizontal Line Between Prompts */
+.prompt-list hr {
+    border: none; /* Remove default border */
+    border-top: 1px solid #ddd; /* Add a light gray line */
+    margin: 0; /* Remove default margin */
+}
+
+/* Prompt List Links */
+.prompt-list a {
+    text-decoration: none; /* Remove underline from links */
+    color: #1565c0; /* Blue color for links */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+    display: flex; /* Align the link and logo horizontally */
+    align-items: center; /* Vertically align the text and logo */
+}
+
+.prompt-list a:hover {
+    color: #0d47a1; /* Darker blue on hover */
+}
+
+/* ChatGPT Indicator Styling */
+.chatgpt-indicator {
+    font-size: 0.9rem; /* Smaller font size for the indicator */
+    color: #555; /* Gray color for the indicator */
+    margin-left: 5px; /* Add spacing between the link and the indicator */
+    font-style: italic; /* Italicize the indicator text */
+}
+
+/* Outer Container for Resources and Prompts */
+.card-container {
+    max-width: 900px; /* Keep the outer container width the same */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add padding around the container */
+    display: flex; /* Use flexbox for side-by-side layout */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px; /* Add spacing between cards */
+    background-color: #e3f2fd; /* Light blue background for the outer container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Individual Card Styling */
+.card {
+    flex: 1 1 calc(48% - 20px); /* Each card takes up 48% of the container width minus the gap */
+    padding: 30px; /* Add padding inside the card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-color: #ffffff; /* White background for the cards */
+    border: 1px solid #90caf9; /* Subtle blue border */
+    text-align: left; /* Align text to the left */
+    color: #333; /* Dark gray text for readability */
+    min-width: 300px; /* Ensure a minimum width for smaller screens */
+    max-width: 450px; /* Limit the maximum width of each card */
+}
+
+/* Prompt List Styling */
+.prompt-list {
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    background-color: #f1f8e9; /* Light green background for the list */
+    border-radius: 10px; /* Rounded corners for the list */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    overflow: hidden; /* Ensure the list stays within the container */
+}
+
+/* Prompt List Items */
+.prompt-list li {
+    display: flex; /* Align items horizontally */
+    align-items: center; /* Vertically align items */
+    padding: 15px; /* Add padding inside each list item */
+    font-size: 1rem; /* Standard font size */
+    color: #333; /* Dark gray text for readability */
+    position: relative; /* Enable positioning for the logo */
+    background-color: #ffffff; /* White background for each list item */
+    border-bottom: 1px solid #ddd; /* Add a light gray line between items */
+}
+
+/* Remove Border for Last Item */
+.prompt-list li:last-child {
+    border-bottom: none;
+}
+
+/* ChatGPT Logo */
+.chatgpt-logo {
+    width: 20px; /* Set the width of the logo */
+    height: 20px; /* Set the height of the logo */
+    margin-right: 10px; /* Add spacing between the logo and the text */
+}
+
+/* Prompt List Links */
+.prompt-list a {
+    text-decoration: none; /* Remove underline from links */
+    color: #1565c0; /* Blue color for links */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+    display: flex; /* Align the link and logo horizontally */
+    align-items: center; /* Vertically align the text and logo */
+}
+
+.prompt-list a:hover {
+    color: #0d47a1; /* Darker blue on hover */
+}
+
+/* ChatGPT Indicator Styling */
+.chatgpt-indicator {
+    font-size: 0.9rem; /* Smaller font size for the indicator */
+    color: #555; /* Gray color for the indicator */
+    margin-left: 5px; /* Add spacing between the link and the indicator */
+    font-style: italic; /* Italicize the indicator text */
+}
+
+/* Resource Category Styling */
+.resource-category h4 {
+    font-size: 1.3rem; /* Slightly larger font size for category headings */
+    margin-bottom: 10px; /* Add spacing below the heading */
+    color: #1565c0; /* Blue color for headings */
+    font-weight: bold; /* Make headings bold */
+}
+
+.resource-category a {
+    text-decoration: none; /* Remove underline from links */
+    color: #1565c0; /* Blue color for links */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.resource-category a:hover {
+    color: #0d47a1; /* Darker blue on hover */
+}
+
+/* Resources Section Header */
+#resources-tutorials h2 {
+    color: #1565c0; /* Blue color for the header */
+    font-size: 2rem; /* Adjust font size for the header */
+    text-align: center; /* Center-align the header */
+    margin-bottom: 20px; /* Add spacing below the header */
+    text-transform: uppercase; /* Make the text uppercase for emphasis */
+    letter-spacing: 1.5px; /* Add spacing between letters */
+    font-weight: bold; /* Make the header bold */
+}
+
+/* Prompt List Styling */
+.prompt-list {
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    background-color: #f9f9f9; /* Light gray background for the list */
+    border-radius: 10px; /* Rounded corners for the list */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    overflow: hidden; /* Ensure the list stays within the container */
+}
+
+/* Prompt List Items */
+.prompt-list li {
+    display: flex; /* Align items horizontally */
+    align-items: center; /* Vertically align items */
+    padding: 15px; /* Add padding inside each list item */
+    font-size: 1rem; /* Standard font size */
+    color: #333; /* Dark gray text for readability */
+    position: relative; /* Enable positioning for the logo */
+}
+
+/* ChatGPT Logo */
+.chatgpt-logo {
+    width: 20px; /* Set the width of the logo */
+    height: 20px; /* Set the height of the logo */
+    margin-right: 10px; /* Add spacing between the logo and the text */
+}
+
+/* Horizontal Line Between Prompts */
+.prompt-list hr {
+    border: none; /* Remove default border */
+    border-top: 1px solid #ddd; /* Add a light gray line */
+    margin: 0; /* Remove default margin */
+}
+
+/* Prompt List Links */
+.prompt-list a {
+    text-decoration: none; /* Remove underline from links */
+    color: #1565c0; /* Blue color for links */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+    display: flex; /* Align the link and logo horizontally */
+    align-items: center; /* Vertically align the text and logo */
+}
+
+.prompt-list a:hover {
+    color: #0d47a1; /* Darker blue on hover */
+}
+
+/* ChatGPT Indicator Styling */
+.chatgpt-indicator {
+    font-size: 0.9rem; /* Smaller font size for the indicator */
+    color: #555; /* Gray color for the indicator */
+    margin-left: 5px; /* Add spacing between the link and the indicator */
+    font-style: italic; /* Italicize the indicator text */
+}
+
+/* Outer Container for Resources and Prompts */
+.card-container {
+    max-width: 900px; /* Keep the outer container width the same */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add padding around the container */
+    display: flex; /* Use flexbox for side-by-side layout */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px; /* Add spacing between cards */
+    background-color: #e3f2fd; /* Light blue background for the outer container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Individual Card Styling */
+.card {
+    flex: 1 1 calc(48% - 20px); /* Each card takes up 48% of the container width minus the gap */
+    padding: 30px; /* Add padding inside the card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-color: #ffffff; /* White background for the cards */
+    border: 1px solid #90caf9; /* Subtle blue border */
+    text-align: left; /* Align text to the left */
+    color: #333; /* Dark gray text for readability */
+    min-width: 400px; /* Ensure a wider minimum width for better text fit */
+    max-width: 450px; /* Limit the maximum width of each card */
+}
+
+/* Prompt List Styling */
+.prompt-list {
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    background-color: #f1f8e9; /* Light green background for the list */
+    border-radius: 10px; /* Rounded corners for the list */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    overflow: hidden; /* Ensure the list stays within the container */
+}
+
+/* Prompt List Items */
+.prompt-list li {
+    display: flex; /* Align items horizontally */
+    align-items: center; /* Vertically align items */
+    padding: 15px; /* Add padding inside each list item */
+    font-size: 1rem; /* Standard font size */
+    color: #333; /* Dark gray text for readability */
+    position: relative; /* Enable positioning for the logo */
+    background-color: #ffffff; /* White background for each list item */
+    border-bottom: 1px solid #ddd; /* Add a light gray line between items */
+}
+
+/* Remove Border for Last Item */
+.prompt-list li:last-child {
+    border-bottom: none;
+}
+
+/* ChatGPT Logo */
+.chatgpt-logo {
+    width: 20px; /* Set the width of the logo */
+    height: 20px; /* Set the height of the logo */
+    margin-right: 10px; /* Add spacing between the logo and the text */
+}
+
+/* Prompt List Links */
+.prompt-list a {
+    text-decoration: none; /* Remove underline from links */
+    color: #1565c0; /* Blue color for links */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+    display: flex; /* Align the link and logo horizontally */
+    align-items: center; /* Vertically align the text and logo */
+}
+
+.prompt-list a:hover {
+    color: #0d47a1; /* Darker blue on hover */
+}
+
+/* ChatGPT Indicator Styling */
+.chatgpt-indicator {
+    font-size: 0.9rem; /* Smaller font size for the indicator */
+    color: #555; /* Gray color for the indicator */
+    margin-left: 5px; /* Add spacing between the link and the indicator */
+    font-style: italic; /* Italicize the indicator text */
+}
+
+/* Resource Category Styling */
+.resource-category h4 {
+    font-size: 1.3rem; /* Slightly larger font size for category headings */
+    margin-bottom: 10px; /* Add spacing below the heading */
+    color: #1565c0; /* Blue color for headings */
+    font-weight: bold; /* Make headings bold */
+}
+
+.resource-category a {
+    text-decoration: none; /* Remove underline from links */
+    color: #1565c0; /* Blue color for links */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.resource-category a:hover {
+    color: #0d47a1; /* Darker blue on hover */
+}
+
+/* Resources Section Header */
+#resources-tutorials h2 {
+    color: #1565c0; /* Blue color for the header */
+    font-size: 2rem; /* Adjust font size for the header */
+    text-align: center; /* Center-align the header */
+    margin-bottom: 20px; /* Add spacing below the header */
+    text-transform: uppercase; /* Make the text uppercase for emphasis */
+    letter-spacing: 1.5px; /* Add spacing between letters */
+    font-weight: bold; /* Make the header bold */
+}
+
+/* Individual Card Styling */
+.card {
+    background-color: #28699f; /* Light blue background for the cards */
+    border: 1px solid #90caf9; /* Subtle blue border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 30px; /* Add padding inside the card */
+    color: #333; /* Dark gray text for readability */
+}
+
+/* Outer Container for Resources and Prompts */
+.card-container {
+    max-width: 900px; /* Keep the outer container width the same */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add padding around the container */
+    display: flex; /* Use flexbox for side-by-side layout */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px; /* Add spacing between cards */
+    background-color: #e3f2fd; /* Light blue background for the outer container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Individual Card Styling */
+.card {
+    flex: 1 1 calc(48% - 20px); /* Each card takes up 48% of the container width minus the gap */
+    padding: 30px; /* Add padding inside the card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-color: #bbdefb; /* Light blue background for the cards */
+    border: 1px solid #90caf9; /* Subtle blue border */
+    text-align: left; /* Align text to the left */
+    color: #333; /* Dark gray text for readability */
+}
+
+/* Prompt List Styling */
+.prompt-list {
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    background-color: #e3f2fd; /* Light blue background for the list */
+    border-radius: 10px; /* Rounded corners for the list */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    overflow: hidden; /* Ensure the list stays within the container */
+}
+
+/* Resource Category Styling */
+.resource-category {
+    background-color: #bbdefb; /* Light blue background for resource categories */
+    padding: 15px; /* Add padding inside the resource category */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin-bottom: 15px; /* Add spacing between categories */
+}
+
+/* Prompt Container Styling */
+.card-container .card:first-child {
+    background-color: #d1e7ff; /* Light blue background for the Prompt container */
+    border: 1px solid #90caf9; /* Subtle blue border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 30px; /* Add padding inside the card */
+    color: #333; /* Dark gray text for readability */
+}
+
+/* Resource Container Styling */
+.card-container .card:last-child {
+    background-color: #d1e7ff; /* Light green background for the Resource container */
+    border: 1px solid #d1e7ff; /* Subtle green border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 30px; /* Add padding inside the card */
+    color: #333; /* Dark gray text for readability */
+}
+
+.resource-category { 
+    background-color: d1e7ff; /* Light blue background for resource categories */
+}
+
+/* Prompt Container Styling */
+.card-container .card:first-child {
+    background-color: #d1e7ff; /* Light blue background for the Prompt container */
+    border: 1px solid #90caf9; /* Subtle blue border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 30px; /* Add padding inside the card */
+    color: #333; /* Dark gray text for readability */
+}
+
+/* Resource Container Styling */
+.card-container .card:last-child {
+    background-color: #d1e7ff; /* Light blue background for the Resource container (same as Prompt container) */
+    border: 1px solid #90caf9; /* Subtle blue border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 30px; /* Add padding inside the card */
+    color: #333; /* Dark gray text for readability */
+}
+
+/* Prompt Container Styling */
+.card-container .card:first-child {
+    background-color: #d1e7ff; /* Light blue background for the Prompt container */
+    border: 1px solid #90caf9; /* Subtle blue border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 30px; /* Add padding inside the card */
+    color: #333; /* Dark gray text for readability */
+}
+
+/* Resource Container Styling */
+.card-container .card:nth-child(2) {
+    background-color: #d1e7ff; /* Light blue background for the Resource container */
+    border: 1px solid #90caf9; /* Subtle blue border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 30px; /* Add padding inside the card */
+    color: #333; /* Dark gray text for readability */
+}
+
+/* Resource Category Styling */
+.resource-category {
+    background-color: #ffffff; /* White background for resource categories */
+    padding: 15px; /* Add padding inside the resource category */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin-bottom: 15px; /* Add spacing between categories */
+    color: #333; /* Dark gray text for readability */
+}
+
+/* Main Header */
+.main-header {
+    position: relative; /* Enable positioning for child elements */
+    height: auto; /* Allow the height to adjust based on content */
+    background-image: url('HomeCover.png'); /* Main background image */
+    background-size: cover; /* Ensure the image covers the entire header */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center elements horizontally */
+    justify-content: center; /* Center elements vertically */
+    color: white; /* Text color */
+    text-align: center; /* Center the text */
+    padding: 20px; /* Add padding for spacing */
+    font-family: 'Audiowide', Arial, sans-serif; /* Ensure consistent font */
+}
+
+/* Title Styling */
+.main-header h1 {
+    font-size: 2.5rem; /* Adjust font size for the title */
+    margin-bottom: 10px; /* Add spacing below the title */
+    color: white; /* Ensure the title text is white */
+    font-family: 'Audiowide', Arial, sans-serif; /* Match the font with the rest of the site */
+}
+
+/* Subtitle Styling */
+.main-header .subtitle {
+    font-size: 1.2rem; /* Adjust font size for the description */
+    color: white; /* Ensure the description text is white */
+    font-family: 'Audiowide', Arial, sans-serif; /* Match the font with the rest of the site */
+    line-height: 1.6; /* Add line height for better readability */
+    max-width: 800px; /* Limit the width of the description */
+    margin: 0 auto; /* Center the description */
+}
+
+/* Resource List Links */
+.resource-category a {
+    text-decoration: none; /* Remove underline from links */
+    color: #1565c0; /* Blue color for links */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.resource-category a:hover {
+    color: #0d47a1; /* Darker blue on hover */
+}
+
+/* Resource List Links */
+.resource-category a {
+    text-decoration: none; /* Remove underline from links */
+    color: #1565c0; /* Blue color for links */
+    font-weight: bold !important; /* Force links to be bold */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.resource-category a:hover {
+    color: #0d47a1; /* Darker blue on hover */
+}
+
+/* Resource List Links */
+.resource-category a {
+    text-decoration: underline; /* Add underline to links */
+    color: #1565c0; /* Blue color for links */
+    font-weight: normal; /* Ensure the font weight is normal */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.resource-category a:hover {
+    color: #0d47a1; /* Darker blue on hover */}
+
+    
+    /* FAQ Section Styling */
+.faq-section {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #222a76;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+}
+
+/* Accordion Item */
+.accordion-item {
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Accordion Button */
+.accordion-button {
+    width: 100%;
+    background-color: #ffffff;
+    color: #333;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: left;
+    padding: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-button:hover {
+    background-color: #f1f1f1;
+}
+
+/* Arrow Styling */
+.accordion-button .arrow {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+/* Rotate Arrow When Active */
+.accordion-button.active .arrow {
+    transform: rotate(180deg); /* Rotate arrow upwards */
+}
+
+/* Accordion Content */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 15px;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Outer Container for Resources and Prompts */
+.card-container {
+    max-width: 900px; /* Keep the outer container width the same */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add padding around the container */
+    display: flex; /* Use flexbox for side-by-side layout */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px; /* Add spacing between cards */
+    background-color: #21457a; /* Dark blue background for the outer container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* General Text Styling */
+body {
+    color: #ffffff; /* Set all text to white */
+}
+
+/* Accordion Text Styling */
+.accordion-button,
+.accordion-content {
+    color: #000000 !important; /* Force accordion text to be black */
+}
+
+/* Accordion Button Hover Effect */
+.accordion-button:hover {
+    background-color: #f1f1f1; /* Slightly lighter background on hover */
+    color: #000000; /* Keep text black on hover */
+}
+
+/* Accordion Content Background */
+.accordion-content {
+    background-color: #f9f9f9; /* Light gray background for accordion content */
+}
+
+/* FAQ Section Title */
+.faq-section h2 {
+    color: #ffffff; /* Set the FAQ title to black */
+}
+
+/* About Us Section Title */
+#about-us h2 {
+    color: #ffffff; /* Set the About Us title to black */
+}
+
+/* Presentation Section Title */
+#presentations-infographics h2 {
+    color: #ffffff; /* Set the Presentation title to black */
+}
+
+/* Resources and Tutorials Section Title */
+#resources-tutorials h2 {
+    color: #ffffff; /* Set the Resources and Tutorials title to black */
+}
+
+/* Accordion Content Text Styling */
+.accordion-content {
+    color: #ffffff !important; /* Set dropdown menu text to black */
+    background-color: #21457a; /* Light gray background for better contrast */
+}
+
+/* About Us Section Styling */
+#about-us {
+    margin: 20px auto;
+    width: 1000px !important; /* Increase the maximum width for horizontal length */
+    padding: 40px 20px; /* Add padding for spacing */
+    background-color: #e3f2fd !important; /* Light blue background for About Us section */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #ffffff; /* Dark gray text for readability */
+    line-height: 1.6;
+}
+
+.footer { 
+    color: black;
+}
+
+/* Footer Link Styling */
+.footer a {
+    color: #000000; /* Set the link color to black */
+    text-decoration: underline; /* Remove underline for a cleaner look */
+}
+
+.footer a:hover {
+    text-decoration: underline; /* Add underline on hover for interactivity */
+}
+
+ 

@@ -28,7 +28,7 @@ app.post('/ask', async (req, res) => {
         res.json({ answer: data.choices[0].message.content.trim() });
     } catch (err) {
         console.log("ERROR in /ask:", err);
-        res.status(500).json({ answer: "Go find out using Google." });
+        res.status(500).json({ answer: "Go find out using Google!" });
     }
 });
 

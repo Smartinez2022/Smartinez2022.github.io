@@ -387,15 +387,55 @@
         });
     </script>
 
+<!-- Chatbot Bubble and Window -->
+<div id="chatbot-bubble" onclick="toggleChatbot()">
+    💬
+</div>
+<div id="chatbot-container">
+    <h3>Ask AI</h3>
+    <div id="chatbot-messages"></div>
+    <input id="chatbot-input" type="text" placeholder="Type your question...">
+    <button id="chatbot-send">Send</button>
+</div>
+
+<script>
+function toggleChatbot() {
+    const chatbot = document.getElementById('chatbot-container');
+    chatbot.classList.toggle('active');
+}
+
+document.getElementById("chatbot-send").addEventListener("click", async () => {
+    const input = document.getElementById("chatbot-input").value;
+    if (!input) return;
+
+    const messagesContainer = document.getElementById("chatbot-messages");
+    const userMessage = document.createElement("div");
+    userMessage.textContent = "You: " + input;
+    messagesContainer.appendChild(userMessage);
+
+    document.getElementById("chatbot-input").value = "";
+
+    // Send the question to your backend server
+    try {
+        const response = await fetch("http://localhost:5000/ask", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ question: input })
+        });
+        const data = await response.json();
+        const botMessage = document.createElement("div");
+        botMessage.textContent = "AI: " + data.answer;
+        botMessage.style.color = "#21457a";
+        messagesContainer.appendChild(botMessage);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    } catch (error) {
+        const errorMessage = document.createElement("div");
+        errorMessage.textContent = "AI: Sorry, I couldn't process your request.";
+        errorMessage.style.color = "red";
+        messagesContainer.appendChild(errorMessage);
+    }
+});
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
-
- 
-
- 
